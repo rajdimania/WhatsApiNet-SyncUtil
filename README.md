@@ -14,4 +14,13 @@ Options:
         mode: sync mode (full or delta)
         context: sync context (registration, background or interactive)
         debug: enables debug output (true)
+
+Returns:
+        existing phone numbers (delimited by line breaks)
 ```
+
+Todo:
+[] Integrate WhatsAppApi.dll into assembly
+[] Support for CSV files
+[] Support for Google contacts
+[] GUI

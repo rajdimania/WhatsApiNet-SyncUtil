@@ -20,7 +20,7 @@ Returns:
 ```
 
 Todo:
-[] Integrate WhatsAppApi.dll into assembly
-[] Support for CSV files
-[] Support for Google contacts
-[] GUI
+- [ ] Integrate WhatsAppApi.dll into assembly
+- [ ] Support for CSV files
+- [ ] Support for Google contacts
+- [ ] GUI

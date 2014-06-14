@@ -15,7 +15,6 @@ namespace WhatsApiNet_SyncUtil
         static bool Debug = false;
         static string[] Numbers;
         static WhatsAppApi.WhatsApp Instance;
-        static bool Done = false;
 
         static void Main(string[] args)
         {
@@ -41,10 +40,7 @@ namespace WhatsApiNet_SyncUtil
                 //logged in
                 Instance.SendSync(Numbers, Mode, Context);
 
-                while (!Done)
-                {
-                    Instance.pollMessage(false);
-                }
+                while (Instance.pollMessage(false)) ;
             }
             else
             {
@@ -58,14 +54,14 @@ namespace WhatsApiNet_SyncUtil
             {
                 Console.WriteLine(key.Trim(new char[] { '+' }));
             }
-            Done = true;
+            Environment.Exit(0);
         }
 
         public static void Instance_OnError(string id, string from, int code, string text)
         {
             if (id.StartsWith("sendsync"))
                 Console.WriteLine("Sync error: {0}({1})", text, code);
-            Done = true;
+            Environment.Exit(1);
         }
 
         static void Instance_OnPrintDebug(object value)
